@@ -11,6 +11,7 @@ namespace Simple.Status.Console
         {
             Core.Interfaces.IDatabaseConfig databaseConfig = new Core.DatabaseConfig();
             Core.Interfaces.IInputConfig inputConfig = new Core.InputConfig();
+            Core.Interfaces.IOutputConfig outputConfig = new Core.OutputConfig();
 
             var builder = new ConfigurationBuilder()
                 .AddEnvironmentVariables();
@@ -18,7 +19,7 @@ namespace Simple.Status.Console
 
             config.Bind("Database", databaseConfig);
             config.Bind("Input", inputConfig);
-
+            config.Bind("Output", outputConfig);
             string connectionString = databaseConfig.BuildConnectionString();
 
             using (var connection = new System.Data.SqlClient.SqlConnection(connectionString))
