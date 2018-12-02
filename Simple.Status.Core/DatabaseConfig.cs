@@ -9,6 +9,7 @@ namespace Simple.Status.Core
         public string Username { get; set; }
         public string Password { get; set; }
         public string ConnectionStringTemplate { get; set; }
+        public string Sql { get; set; }
 
         public string BuildConnectionString()
         {
