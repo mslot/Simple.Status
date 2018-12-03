@@ -5,18 +5,25 @@ This is still pretty alpha, and is only tested with MSSQL. All code is at this p
 A small program that allows a person to create a formatted string, with columns that matches a given sql string. The string is then used on all returned rows, and is outputted to the console.
 
 # Example
-For now only environment variables is supported. Create a launchSettings.json file and give the following information to the environment section
+
+FOr now only a config file in bin root is supported. Create a config file under a folder named config in the root bin directory and name the config file main.json. The contents of the file should be:
 
 ```
-     "environmentVariables": {
-        "Database:ConnectionStringTemplate": "Server=server;Initial Catalog=catalog;Persist Security Info=False;User ID={username};Password={password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
-        "Database:Username": "user",
-        "Database:Password": "pass",
-        "Database:Sql": "select * from table order by time desc",
-        "Input:FormattedInput": "[{Time}] {Identifier} : {Value} {Unit}",
-        "Output:Multiline": "false"
-      }
+{
+  "Input": {
+    "FormattedInput": "[{MeasurementTime}] {DeviceIdentifier} : {Value} {Unit}"
+  },
+  "Output": {
+    "Multiline": true,
+    "Seperator": " "
+  },
+  "Database": {
+    "ConnectionString": "Server=(server);Initial Catalog=(catalog);Persist Security Info=False;User ID=(user);Password=(password);MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
+    "Sql": "select * from table order by column desc"
+  }
+}
 ```
+
 
 The above example will connection the database server, and fire the sql, and then, for each row, it will find the columns in the FormattedInput:
 

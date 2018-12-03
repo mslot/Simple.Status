@@ -14,13 +14,14 @@ namespace Simple.Status.Console
             Core.Interfaces.IOutputConfig outputConfig = new Core.OutputConfig();
 
             var builder = new ConfigurationBuilder()
-                .AddEnvironmentVariables();
+                .AddEnvironmentVariables()
+                .AddJsonFile("config/main.json");
             IConfiguration config = builder.Build();
 
             config.Bind("Database", databaseConfig);
             config.Bind("Input", inputConfig);
             config.Bind("Output", outputConfig);
-            string connectionString = databaseConfig.BuildConnectionString();
+            string connectionString = databaseConfig.ConnectionString;
 
             using (var connection = new System.Data.SqlClient.SqlConnection(connectionString))
             {

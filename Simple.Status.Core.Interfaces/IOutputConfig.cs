@@ -7,5 +7,6 @@ namespace Simple.Status.Core.Interfaces
     public interface IOutputConfig
     {
         bool Multiline { get; }
+        string Seperator { get; }
     }
 }
