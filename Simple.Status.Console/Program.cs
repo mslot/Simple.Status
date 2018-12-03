@@ -56,8 +56,18 @@ namespace Simple.Status.Console
                         }
                     }
 
-                    foreach (var o in outputStrings)
-                        System.Console.WriteLine(o);
+                    foreach (var outputString in outputStrings)
+                    {
+                        if (outputConfig.Multiline)
+                        {
+                            System.Console.WriteLine(outputString);
+                        }
+                        else
+                        {
+                            System.Console.Write($"{outputString}{outputConfig.Seperator}");
+                        }
+
+                    }
                 }
             }
 
