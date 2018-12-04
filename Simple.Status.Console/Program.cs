@@ -47,6 +47,7 @@ namespace Simple.Status.Console
                             {
                                 var val = reader.GetValue(reader.GetOrdinal(column));
                                 entries.Add("{" + column + "}", val.ToString());
+
                                 foreach (var entry in entries)
                                 {
                                     outputString = outputString.Replace(entry.Key, entry.Value);
