@@ -75,7 +75,7 @@ namespace Simple.Status.Console
         private static List<string> GetColumnsFromInputString(string inputString)
         {
             Regex regex = new Regex(@"(?<=\{)[^}]*(?=\})", RegexOptions.IgnoreCase);
-            List<string> matches = new List<string>();
+            var matches = new List<string>();
 
             foreach (var match in regex.Matches(inputString))
             {
