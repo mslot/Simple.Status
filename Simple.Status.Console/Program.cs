@@ -59,13 +59,9 @@ namespace Simple.Status.Console
                     foreach (var outputString in outputStrings)
                     {
                         if (outputConfig.Multiline)
-                        {
                             System.Console.WriteLine(outputString);
-                        }
                         else
-                        {
                             System.Console.Write($"{outputString}{outputConfig.Seperator}");
-                        }
 
                     }
                 }
