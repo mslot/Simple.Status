@@ -28,7 +28,7 @@ namespace Simple.Status.Console
                 string sql = databaseConfig.Sql;
                 string inputString = inputConfig.FormattedInput;
                 var outputStrings = new List<string>();
-                var columns = GetColumnsFromInputString(inputString);
+                List<string> columns = GetColumnsFromInputString(inputString);
 
                 using (var command = new System.Data.SqlClient.SqlCommand(sql))
                 {
