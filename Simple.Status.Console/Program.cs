@@ -41,7 +41,7 @@ namespace Simple.Status.Console
                     {
                         while (reader.Read())
                         {
-                            Dictionary<string, string> entries = new Dictionary<string, string>();
+                            var entries = new Dictionary<string, string>();
                             string outputString = inputString;
                             foreach (var column in columns)
                             {
