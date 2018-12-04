@@ -12,7 +12,7 @@ steps:
   inputs:
     command: publish
     publishWebProjects: False
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)\$(Build.SourceVersion)'
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)\$(Build.BuildNumber)'
     zipAfterPublish: True
 
 - task: PublishBuildArtifacts@1
