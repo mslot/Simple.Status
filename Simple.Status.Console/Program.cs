@@ -48,7 +48,10 @@ namespace Simple.Status.Console
                                 var val = reader.GetValue(reader.GetOrdinal(column));
 
                                 if(val != null)
-                                    entries.Add("{" + column + "}", val.ToString());
+                                {
+                                    string key = "{" + column + "}";
+                                    entries.Add(key, val.ToString());
+                                }
 
                                 foreach (var entry in entries)
                                 {
