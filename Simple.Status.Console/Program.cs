@@ -55,7 +55,9 @@ namespace Simple.Status.Console
 
                                 foreach (var entry in entries)
                                 {
-                                    outputString = outputString.Replace(entry.Key, entry.Value);
+                                    string outputKey = entry.Key;
+                                    string outputValue = entry.Value;
+                                    outputString = outputString.Replace(outputKey, outputValue);
                                 }
                             }
                             outputStrings.Add(outputString);
