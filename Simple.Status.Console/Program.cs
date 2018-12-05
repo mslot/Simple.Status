@@ -5,6 +5,12 @@ using System.Text.RegularExpressions;
 
 namespace Simple.Status.Console
 {
+    /*
+     * DISCLAIMER
+     * This code is a going to be refactored, a lot. I have a simple data collector
+     * that collect sensor data from around my house. I want to see if I can display the collected
+     * data in my i3 display manager (Linux).
+     */
     class Program
     {
         static void Main(string[] args)
